@@ -302,7 +302,7 @@ export async function onMessageReceived(data) {
                 renderMusicPlayer($musicPlayerContainer[0]);
             }
 
-            // When auto-update is disabled,no tracker API call will run for this message. 
+            // When auto-update is disabled, no tracker API call will run for this message. 
             // Inherit the prior assistant message's tracker data into this swipe slot so that 
             // commitTrackerDataFromPriorMessage can find a valid state next turn instead of nulling everything
             if (!extensionSettings.autoUpdate && isAwaitingNewMessage) {
