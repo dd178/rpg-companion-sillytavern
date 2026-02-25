@@ -372,7 +372,7 @@ export function inheritSwipeDataFromPriorMessage(message, messageIndex) {
 
         const swipeId = msg.swipe_id || 0;
         const swipeData = getSwipeData(msg, swipeId);
-        if (!swipeData) return false; // Prior assistant also has no data — nothing to inherit
+        if (!swipeData) continue; // No data on this assistant message; keep searching further back
 
         // Write inherited data into this swipe slot.
         if (!message.extra) message.extra = {};
