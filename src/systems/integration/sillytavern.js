@@ -21,7 +21,6 @@ import {
     updateLastGeneratedData,
     updateCommittedTrackerData,
     $musicPlayerContainer,
-    getSeparateGenerationId,
     incrementSeparateGenerationId
 } from '../../core/state.js';
 import { saveChatData, loadChatData, autoSwitchPresetForEntity, getSwipeData, commitTrackerDataFromPriorMessage, inheritSwipeDataFromPriorMessage, mirrorToSwipeInfo } from '../../core/persistence.js';
