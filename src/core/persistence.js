@@ -331,7 +331,13 @@ export function commitTrackerDataFromPriorMessage(currentMessageIndex) {
         const swipeData = getSwipeData(message, swipeId);
         committedTrackerData.userStats = swipeData?.userStats || null;
         committedTrackerData.infoBox = swipeData?.infoBox || null;
-        committedTrackerData.characterThoughts = swipeData?.characterThoughts || null;
+        const rawCharacterThoughts = swipeData?.characterThoughts;
+        committedTrackerData.characterThoughts =
+            rawCharacterThoughts == null
+                ? null
+                : (typeof rawCharacterThoughts === 'string'
+                    ? rawCharacterThoughts
+                    : JSON.stringify(rawCharacterThoughts));
         return;
     }
 
